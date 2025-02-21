@@ -8,7 +8,7 @@ app.use(cors()); // Allow client to connect from a different origin
 
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
-const PORT = 3000;
+const PORT = 5000;
 
 wss.on("connection", (ws) => {
   console.log("Client connected");
