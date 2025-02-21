@@ -18,7 +18,7 @@ wss.on("connection", (ws) => {
     // Broadcast to all clients
     wss.clients.forEach((client) => {
       if (client.readyState === 1) {
-        client.send(message.toString().toUpperCase());
+        client.send(message.toString());
       }
     });
   });
