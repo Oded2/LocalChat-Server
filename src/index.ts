@@ -25,10 +25,14 @@ wss.on("connection", (ws) => {
   console.log(`Client connected with id ${clientId}`);
 
   ws.on("message", (rawMessage) => {
-    const message = rawMessage.toString();
-    console.log(`Received: ${message}`);
+    const message: Data = JSON.parse(rawMessage.toString());
+    console.log(`Received: ${message.content}`);
+    if (message.author === "request-purge") {
+      messages.length = 0;
+      return;
+    }
     const data: Data = {
-      content: message,
+      content: message.content,
       author: clientId,
     };
     messages.push(data);
@@ -42,7 +46,6 @@ wss.on("connection", (ws) => {
 
   ws.on("close", () => {
     console.log(`Client disconnected (id: ${clientId})`);
-    clientNumber--;
   });
 });
 server.listen(PORT, () =>
