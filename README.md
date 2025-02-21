@@ -75,7 +75,7 @@ ws://your-server-ip:5000
 
 ## Client-Side Repository
 
-The LocalChat client-side repository is available [here](https://github.com/Oded2/LocalChat-Client)
+The LocalChat client-side repository is available [here](https://github.com/Oded2/LocalChat-Client).
 
 ## License
 
