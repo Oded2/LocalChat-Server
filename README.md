@@ -21,7 +21,7 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/oded2/localchat-server.git
+   git clone https://github.com/Oded2/localchat-server.git
    cd localchat-server
    ```
 
@@ -75,7 +75,7 @@ ws://your-server-ip:5000
 
 ## Client-Side Repository
 
-The LocalChat client-side repository is available [here](https://github.com/oded2/localchat-client)
+The LocalChat client-side repository is available [here](https://github.com/Oded2/localchat-client)
 
 ## License
 
