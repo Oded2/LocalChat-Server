@@ -5,7 +5,7 @@ import cors from "cors";
 
 type Data = {
   content: string;
-  author: "server" | string;
+  author: string;
 };
 
 const app = express();
@@ -20,7 +20,9 @@ let clientNumber: number = 1;
 wss.on("connection", (ws) => {
   const clientId = `Client ${clientNumber.toLocaleString()}`;
   clientNumber++;
-  ws.send(JSON.stringify({ type: "id", content: clientId, author: "server" }));
+  ws.send(
+    JSON.stringify({ type: "id", content: clientId, author: "server-clientid" })
+  );
   messages.forEach((data) => ws.send(JSON.stringify(data)));
   console.log(`Client connected with id ${clientId}`);
 
